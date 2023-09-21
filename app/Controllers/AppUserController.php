@@ -51,14 +51,7 @@ class AppUserController extends CoreController
         // Hash du mot de passe
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        /* Validation des données
-        * 1. Champs bien remplis
-        * 2. Format de l'email
-        * 3. Longueur du mot de passe et complexité
-        * 4. Rôle et statut existant
-        * 5. Vérifier que l'email n'existe pas encore dans la base de données (est unique)
-        */
-
+        
         $formErrors = [];
 
         // Vérification des champs vides
@@ -72,12 +65,7 @@ class AppUserController extends CoreController
         if (strlen($password) < 8) {
             $formErrors[] = "Le mot de passe doit contenir au-moins 8 caractères";
         }
-        /** 
-         * Complexité du mot de passe :
-         * Mettre en place une expression régulière (regex)
-         * Utiliser la fonction preg_match pour vérifier que le format correspond à ce qui est attendu
-         * Voir vidéo dans Ressources sur Slack
-         */
+        
 
          $regex = "/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}/";
         

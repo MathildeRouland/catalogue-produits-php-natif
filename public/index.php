@@ -20,8 +20,7 @@ session_start ();
 // Cet objet va gérer les routes pour nous, et surtout il va
 $router = new AltoRouter();
 
-// le répertoire (après le nom de domaine) dans lequel on travaille est celui-ci
-// Mais on pourrait travailler sans sous-répertoire
+
 // Si il y a un sous-répertoire
 if (array_key_exists('BASE_URI', $_SERVER)) {
     // Alors on définit le basePath d'AltoRouter
